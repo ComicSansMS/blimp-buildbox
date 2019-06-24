@@ -1,0 +1,4 @@
+.idea
+aws-c-common-build/*
+aws-c-event-stream-build/*
+aws-checksums-build/*

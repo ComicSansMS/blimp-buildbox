@@ -2,4 +2,5 @@
 aws-c-common-build/*
 aws-c-event-stream-build/*
 aws-checksums-build/*
+aws-sdk-cpp-build/*
 install/*

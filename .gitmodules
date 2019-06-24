@@ -7,3 +7,6 @@
 [submodule "aws-c-event-stream"]
 	path = aws-c-event-stream
 	url = https://github.com/awslabs/aws-c-event-stream
+[submodule "aws-sdk-cpp"]
+	path = aws-sdk-cpp
+	url = https://github.com/aws/aws-sdk-cpp.git

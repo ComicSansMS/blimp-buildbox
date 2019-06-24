@@ -11,7 +11,7 @@ do_run_tests = True
 cmake_generator = "Visual Studio 16 2019"
 cmake_architecture = "x64"
 cwd = os.getcwd()
-install_dir = os.path.join(cwd, "INSTALL")
+install_dir = os.path.join(cwd, "install")
 configs = ["Debug", "MinSizeRel", "Release", "RelWithDebInfo"]
 
 print("*******************************************************************************")

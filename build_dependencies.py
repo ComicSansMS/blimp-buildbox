@@ -7,7 +7,7 @@ def call(args, cwd=os.getcwd()):
     if p.wait() != 0:
         raise RuntimeError("Error in subprocess.")
 
-do_run_tests = True
+do_run_tests = False
 cmake_generator = "Visual Studio 16 2019"
 cmake_architecture = "x64"
 cwd = os.getcwd()
@@ -68,8 +68,8 @@ build_dir = os.path.join(cwd, "aws-sdk-cpp-build")
 source_dir = os.path.join(cwd, "aws-sdk-cpp")
 call(["cmake", "-G", cmake_generator, "-A", cmake_architecture,
       "-DCMAKE_INSTALL_PREFIX=" + install_dir, "-DCMAKE_PREFIX_PATH=" + install_dir,
-      "-DBUILD_DEPS=OFF", "-DBUILD_SHARED_LIBS=OFF", "-DENABLE_UNITY_BUILD=ON", "-DENABLE_TESTING=OFF",
-      "-DBUILD_ONLY=core;glacier", source_dir],
+      "-DBUILD_DEPS=OFF", "-DBUILD_SHARED_LIBS=OFF", "-DENABLE_UNITY_BUILD=ON", "-DSIMPLE_INSTALL=OFF",
+      "-DENABLE_TESTING=OFF", "-DBUILD_ONLY=core;glacier", source_dir],
     cwd=build_dir)
 for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])

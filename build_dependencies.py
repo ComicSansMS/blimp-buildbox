@@ -77,4 +77,19 @@ for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
 
 print("*******************************************************************************")
-print("AWS_DEPENDENCIES_ROOT=", install_dir)
+print("***  zlib                                                                   ***")
+print("*******************************************************************************")
+sys.stdout.flush()
+
+build_dir = os.path.join(cwd, "zlib-build")
+source_dir = os.path.join(cwd, "zlib")
+call(["cmake", "-G", cmake_generator, "-A", cmake_architecture,
+      "-DCMAKE_INSTALL_PREFIX=" + install_dir, source_dir],
+    cwd=build_dir)
+for c in configs:
+    call(["cmake", "--build", build_dir, "--config", c, "-j"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+
+
+print("*******************************************************************************")
+print("BLIMP_BUILDBOX_ROOT=", install_dir)

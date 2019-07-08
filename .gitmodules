@@ -10,3 +10,6 @@
 [submodule "aws-sdk-cpp"]
 	path = aws-sdk-cpp
 	url = https://github.com/aws/aws-sdk-cpp.git
+[submodule "zlib"]
+	path = zlib
+	url = https://github.com/madler/zlib.git

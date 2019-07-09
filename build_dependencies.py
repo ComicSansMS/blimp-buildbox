@@ -89,7 +89,7 @@ call(["cmake", "-G", cmake_generator, "-A", cmake_architecture,
 for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
     call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
-
+os.rename(os.path.join(source_dir, "zconf.h.included"), os.path.join(source_dir, "zconf.h"))
 
 print("*******************************************************************************")
 print("BLIMP_BUILDBOX_ROOT=", install_dir)

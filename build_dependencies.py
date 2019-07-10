@@ -39,7 +39,7 @@ for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
     if do_run_tests:
         call(["cmake", "--build", build_dir, "--config", c, "--target", "RUN_TESTS"])
-    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "install"])
 
 print("*******************************************************************************")
 print("***  aws-checksums                                                          ***")
@@ -54,7 +54,7 @@ for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
     if do_run_tests:
         call(["cmake", "--build", build_dir, "--config", c, "--target", "RUN_TESTS"])
-    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "install"])
 
 print("*******************************************************************************")
 print("***  aws-c-event-stream                                                     ***")
@@ -69,7 +69,7 @@ for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
     if do_run_tests:
         call(["cmake", "--build", build_dir, "--config", c, "--target", "RUN_TESTS"])
-    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "install"])
 
 print("*******************************************************************************")
 print("***  aws-cpp-sdk                                                            ***")
@@ -86,7 +86,7 @@ for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
     #if do_run_tests:
     #    call(["cmake", "--build", build_dir, "--config", c, "--target", "RUN_TESTS"])
-    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "install"])
 
 print("*******************************************************************************")
 print("***  zlib                                                                   ***")
@@ -99,7 +99,7 @@ call_cmake_configure(["-DCMAKE_INSTALL_PREFIX=" + install_dir, source_dir],
                      cwd=build_dir)
 for c in configs:
     call(["cmake", "--build", build_dir, "--config", c, "-j"])
-    call(["cmake", "--build", build_dir, "--config", c, "--target", "INSTALL"])
+    call(["cmake", "--build", build_dir, "--config", c, "--target", "install"])
 os.rename(os.path.join(source_dir, "zconf.h.included"), os.path.join(source_dir, "zconf.h"))
 
 print("*******************************************************************************")
